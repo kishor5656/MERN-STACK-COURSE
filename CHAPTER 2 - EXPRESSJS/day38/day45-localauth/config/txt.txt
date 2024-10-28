@@ -1,0 +1,72 @@
+// file name:userModel.js
+const mongoose=require('mongoose');
+// install validatorwhich is a simple  library module that acn provide basic validations
+// for that npm i validator in terminal
+const validator=require('validator');
+
+// require the bcrypt library for password hashing
+const bcrypt=require('bcryptjs');
+// inorder to create a model first we need to crete a schema and based on that schema we need to create a model
+
+// now using the mongoose object let's create  a variable and can call it userSchema
+// in the userSchema the required fileds are name,email,photo,password,and confirmPassword
+
+
+
+const userSchema=new mongoose.Schema({
+    name:{
+        type:String,
+        required:[true,'Please enter your name'],
+         },
+    email:{
+        type: String,
+        required:[true,'Please enter your email'],
+        unique:true,// no two users can use the same email
+        lowercase:true,
+        validate:[validator.isEmail,'Please enter a valid email']
+
+         },
+    password:{
+        type:String,
+        required:[true,'Please enter a passsword'],
+        minlength:8
+    },
+    confirmPassword:{
+        type:String,
+        required:[true,'Please confirm your password'],
+
+        validate:{
+            validator:function(val){
+                return val == this.password
+                 },
+        message:"Password and confirmed Password doesn't match!try again"
+        }
+
+    }
+
+});
+
+
+
+userSchema.pre('save',async function(next){
+    //first we check whether the password is modified.since we need to encrypt the password only if it is newly created or updated
+    if(!this.isModified('password'))return(next);
+    //if the password is modified then encrypt the password
+    //for this install the bcrypt module or library
+    //npm i bcrypt in terminal and require it in this file
+    //encrypt the password before saving it
+    this.password=await bcrypt.hash(this.password,12) // here this.password is what we need to encrypt and 12 is the cost parameter
+    // once the password is encrypted 
+    // we will set the confirrm password to undefined 
+    // since we dont want the confirmPassword field to be stored in the database so we set it to undefined
+    this.confirmPassword=undefined;
+    next();
+
+
+})
+// based on this userSchema we can create  a user model for this we create a variable and called it user on the 
+//mongoose.model
+const User=mongoose.model('User',userSchema)// here User is the name of the model that we want to create and 
+//userSchema is the schema  based on which we want to create  the model
+
+module.exports=User;

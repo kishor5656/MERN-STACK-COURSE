@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto 2fr auto;
+            grid-template-areas: 
+            "header header header"
+            "nav main aside"
+            "footer footer footer";
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            grid-area: header;
+            background-color: lightblue;
+        }
+        nav{
+            grid-area: nav;
+            background-color: lightcoral;
+        }
+        main{
+            grid-area: main;
+            background-color: lightgreen;
+        }
+        article{
+            background-color: lightgray;
+        }
+        aside{
+            grid-area: aside;
+            background-color: lightseagreen;
+        }
+        footer{
+            grid-area: footer;
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>website-logo</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+            <h2>article 1</h2>
+            <p>this is the content of the first article</p>
+        </article>
+        <article>
+            <h2>article 2</h2>
+            <p>this is the content of the second article</p>
+        </article>
+    </main>
+    <aside>
+        <h2>related links</h2>
+        <ul>
+            <li><a href="#">link1</a></li>
+            <li><a href="#">link1</a></li>
+            <li><a href="#">link1</a></li>
+        </ul>
+    </aside>
+    <footer>
+        <p>@copy; 2024 gothamb dosa</p>
+    </footer>
+</body>
+
+</html>

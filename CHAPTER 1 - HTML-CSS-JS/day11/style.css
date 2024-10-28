@@ -1,0 +1,30 @@
+/* *{
+    border: solid 1px rgb(0, 0, 0);
+} */
+
+.first{
+    width: 500px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: rgb(0, 106, 133);
+    
+
+}
+.first p{
+    border: 1px solid black;
+
+}
+.second{
+    width: 500px;
+    box-sizing: content-box;
+    padding: 15px;
+    background-color: rgb(255, 168, 76);
+    
+}
+.second p{
+    border: solid black 1px;
+}
+.third{
+    width: 80%;
+    margin-left: 25px;
+}

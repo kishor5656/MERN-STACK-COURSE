@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        img{
+            position: absolute;
+            transform: scaleX(-1);
+            width: 450px;
+            animation: moveCar 5s cubic-bezier(0, 1 , 1, 0) infinite;
+        }
+
+        @keyframes moveCar {
+            from{
+                left: -50%;
+            }
+            to{
+                left: 120%;
+            }
+        }
+</style>
+</head>
+<body>
+    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt=""> -->
+     <img src="https://i.pinimg.com/564x/d9/15/b5/d915b52bcfa36a0b8833f8c52ab431a2.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Elements Example</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 20px;">
+
+    <header style="background-color: #f2f2f2; padding: 10px;">
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="display: inline; margin-right: 10px;"><a href="#home">Home</a></li>
+                <li style="display: inline; margin-right: 10px;"><a href="#about">About</a></li>
+                <li style="display: inline; margin-right: 10px;"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <article>
+                <h2>Home Section</h2>
+                <p>This is an example of a semantic tag structure, using <strong>header</strong>, <strong>nav</strong>, <strong>section</strong>, and <strong>article</strong>.</p>
+            </article>
+        </section>
+
+        <section id="about">
+            <article>
+                <h2>About Us</h2>
+                <p>Welcome to our website. We are excited to share our journey with you.</p>
+                <p>Our mission is to provide exceptional service and quality products to our customers.</p>
+            </article>
+        </section>
+
+        <div style="border: 1px solid #ccc; padding: 10px;">
+            <h2>Non-Semantic Tags Example</h2>
+            <span>This is a <strong>div</strong> with a <strong>span</strong> inside.</span>
+        </div>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="#" method="post" style="margin-top: 10px;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" style="margin-bottom: 5px;"><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" style="margin-bottom: 5px;"><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" style="margin-bottom: 5px;"></textarea><br>
+
+                <input type="submit" value="Submit" style="margin-top: 5px;">
+            </form>
+        </section>
+
+        <section id="media">
+            <h2>Media Section</h2>
+            <p>Here is an example of using media tags in HTML:</p>
+
+   
+            <audio controls style="margin-bottom: 10px;">
+                <source src="audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+      
+            <video width="320" height="240" controls style="margin-bottom: 10px;">
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+
+        <section id="table">
+            <h2>Table Example</h2>
+            <table border="1" style="border-collapse: collapse; width: 100%;">
+                <thead>
+                    <tr style="background-color: #f2f2f2;">
+                        <th rowspan="2">Name</th>
+                        <th colspan="2">Contact Information</th>
+                    </tr>
+                    <tr style="background-color: #f2f2f2;">
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td>(123) 456-7890</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>janesmith@example.com</td>
+                        <td>(098) 765-4321</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style="text-align: center;">End of Table</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+
+    <footer style="background-color: #f2f2f2; padding: 10px; margin-top: 20px;">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
